@@ -1,0 +1,1 @@
+{"Copyright":"//Copyright (C) Subhajit DasGupta 2021","GeneratedDir":"generated","SaveFile":"/tmp/main.go", "Project":"github.com/lf8r/example","DefaultRESTPort":8080,"DefaultGRPCPort":9090,"Types":[{"ImportPath":"github.com/lf8r/example-data/data/Person"},{"ImportPath":"github.com/lf8r/example-data/data1/Book"}]}

@@ -1,0 +1,77 @@
+syntax = "proto3";
+package person;
+
+option go_package = "/person";
+
+message CreatePersonRequest {
+	bytes body = 1;
+}
+
+message CreatePersonResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+message DeletePersonRequest {
+	bytes body = 1;
+}
+
+message DeletePersonResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+message DeleteByIDPersonRequest {
+	bytes body = 1;
+}
+
+message DeleteByIDPersonResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+message GetByIDPersonRequest {
+	bytes body = 1;
+}
+
+message GetByIDPersonResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+message ListPersonRequest {
+	bytes body = 1;
+}
+
+message ListPersonResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+message UpdatePersonRequest {
+	bytes body = 1;
+}
+
+message UpdatePersonResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+message PartialUpdatePersonRequest {
+	bytes body = 1;
+}
+
+message PartialUpdatePersonResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+service Service {
+	rpc CreatePerson (CreatePersonRequest) returns (CreatePersonResponse) {}
+	rpc DeletePerson (DeletePersonRequest) returns (DeletePersonResponse) {}
+	rpc DeleteByIDPerson (DeleteByIDPersonRequest) returns (DeleteByIDPersonResponse) {}
+	rpc GetByIDPerson (GetByIDPersonRequest) returns (GetByIDPersonResponse) {}
+	rpc ListPerson (ListPersonRequest) returns (ListPersonResponse) {}
+	rpc UpdatePerson (UpdatePersonRequest) returns (UpdatePersonResponse) {}
+	rpc PartialUpdatePerson (PartialUpdatePersonRequest) returns (PartialUpdatePersonResponse) {}
+}

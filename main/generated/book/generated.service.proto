@@ -1,0 +1,77 @@
+syntax = "proto3";
+package book;
+
+option go_package = "/book";
+
+message CreateBookRequest {
+	bytes body = 1;
+}
+
+message CreateBookResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+message DeleteBookRequest {
+	bytes body = 1;
+}
+
+message DeleteBookResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+message DeleteByIDBookRequest {
+	bytes body = 1;
+}
+
+message DeleteByIDBookResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+message GetByIDBookRequest {
+	bytes body = 1;
+}
+
+message GetByIDBookResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+message ListBookRequest {
+	bytes body = 1;
+}
+
+message ListBookResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+message UpdateBookRequest {
+	bytes body = 1;
+}
+
+message UpdateBookResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+message PartialUpdateBookRequest {
+	bytes body = 1;
+}
+
+message PartialUpdateBookResponse {
+	bytes body = 1;
+	string error = 2;
+}
+
+service Service {
+	rpc CreateBook (CreateBookRequest) returns (CreateBookResponse) {}
+	rpc DeleteBook (DeleteBookRequest) returns (DeleteBookResponse) {}
+	rpc DeleteByIDBook (DeleteByIDBookRequest) returns (DeleteByIDBookResponse) {}
+	rpc GetByIDBook (GetByIDBookRequest) returns (GetByIDBookResponse) {}
+	rpc ListBook (ListBookRequest) returns (ListBookResponse) {}
+	rpc UpdateBook (UpdateBookRequest) returns (UpdateBookResponse) {}
+	rpc PartialUpdateBook (PartialUpdateBookRequest) returns (PartialUpdateBookResponse) {}
+}

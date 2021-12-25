@@ -28,6 +28,6 @@ protogen github.com/lf8r/example-data/pkg/data/Person ../../generated/protobuf c
 rm -rf temp
 
 # Build main to ensure no syntax errors in generated files.
-rm -f example1
-go build -o example1
+rm -f example
+CGO_ENABLED=0 go build -o example
 
