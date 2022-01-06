@@ -42,7 +42,7 @@ const (
 // listening ports for REST and gRPC endpoints. Unless given "port" defaults to
 // 8080 and "grpcport" defaults to 9090.
 func main() {
-	log.InitWithWriter(os.Args[0], log.ErrorLevel, os.Stdout)
+	log.NewSloggerWithWriter(os.Args[0], log.ErrorLevel, os.Stdout)
 
 	// Profiling - Only one type of profiling must be enabled at any time.
 	// Options are profile.CPUProfile, profile.MemProfile and

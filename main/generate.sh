@@ -6,15 +6,15 @@ set -e
 # function to be generated there.
 rm -rf generated
 mkdir generated
-rm -f generated/grpc.proto
 rm -rf temp
 mkdir temp
 mkdir temp/main
 
-rm -rf book/ person/
-basegen "github.com/lf8r/example-data/pkg/data1/Book[*:copyright=// Copyright (C) Subhajit DasGupta 2021|*:dir=generated|*:package=book|dao:package=bookdao|mw:file=../pkg/book/business_logic.go|rest:endpoint=/rest/books]"
-basegen "github.com/lf8r/example-data/pkg/data/Person[*:copyright=// Copyright (C) Subhajit DasGupta 2021|*:dir=generated|*:package=person|dao:package=persondao|mw:file=../pkg/person/business_logic.go|rest:endpoint=/rest/persons]"
-restfunnel "package=resthandler,saveDir=generated,saveFile=generated.rest.handler.go,types=/rest/persons:data.Person|/rest/books:data1.Book"
+basegen -type="github.com/lf8r/example-data/pkg/data1/Book" -copyright="// Copyright (C) Subhajit DasGupta 2022" -business-logic-file="../pkg/book/business_logic.go"
+basegen -type="github.com/lf8r/example-data/pkg/data/Person" -copyright="// Copyright (C) Subhajit DasGupta 2022" -business-logic-file="../pkg/person/business_logic.go"
+restfunnel -mappings="/rest/persons:data.Person,/rest/books:data.Book"
+maingen -i maingen.json -o main.go
+
 find . -name \*.go -exec goimports -w {} \;
 
 # Generate the per-data-type proto bindings. Note that since main is being

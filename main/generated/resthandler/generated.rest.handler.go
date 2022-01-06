@@ -23,7 +23,7 @@ func types() map[string]string {
 	return map[string]string{
 
 		"/rest/persons": "data.Person",
-		"/rest/books":   "data1.Book",
+		"/rest/books":   "data.Book",
 	}
 }
 
